@@ -27,6 +27,11 @@ class Window(Form, Base):
         self.setsBox.activated.connect(self.select)
         self.clearButton.clicked.connect(self.clear)
         
+        # update the database, how many times this app is used
+        site.addsitedir(r'r:/pipe_repo/users/qurban')
+        import appUsageApp
+        appUsageApp.updateDatabase('randomSelection')
+        
     def closeEvent(self, event):
         self.deleteLater()
         
